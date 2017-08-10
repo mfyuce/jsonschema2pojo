@@ -137,7 +137,9 @@ public class Jackson1Annotator extends AbstractAnnotator {
 
     @Override
     public void additionalPropertiesField(JFieldVar field, JDefinedClass clazz, String propertyName) {
-        field.annotate(JsonIgnore.class);
+        if(!getGenerationConfig().isEnableAdditionalPropertiesToBeSerialized()) {
+            field.annotate(JsonIgnore.class);
+        }
     }
 
 }

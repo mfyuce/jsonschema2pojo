@@ -47,6 +47,7 @@ public class JsonSchemaExtension implements GenerationConfig {
   boolean includeGetters
   boolean includeSetters
   boolean includeAdditionalProperties
+  boolean enableAdditionalPropertiesToBeSerialized
   boolean includeDynamicAccessors
   boolean includeDynamicGetters
   boolean includeDynamicSetters
@@ -127,6 +128,7 @@ public class JsonSchemaExtension implements GenerationConfig {
     classNameSuffix = ''
     fileExtensions = [] as String[]
     includeAdditionalProperties = true
+    enableAdditionalPropertiesToBeSerialized = false
     includeAccessors = true
     includeGetters = false
     includeSetters = false

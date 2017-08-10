@@ -135,6 +135,8 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
 
     private boolean includeAdditionalProperties = true;
 
+    private boolean enableAdditionalPropertiesToBeSerialized = false;
+
     private boolean includeAccessors = true;
 
     private boolean includeGetters = false;
@@ -1053,6 +1055,11 @@ public class Jsonschema2PojoTask extends Task implements GenerationConfig {
     @Override
     public boolean isIncludeAdditionalProperties() {
         return includeAdditionalProperties;
+    }
+
+    @Override
+    public boolean isEnableAdditionalPropertiesToBeSerialized() {
+        return enableAdditionalPropertiesToBeSerialized;
     }
 
     @Override

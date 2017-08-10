@@ -542,6 +542,16 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
     private boolean includeAdditionalProperties = true;
 
     /**
+     * Whether to allow 'additional properties' to have.
+     * JsonIgnore annotation. This may be of use on some designs.
+     *
+     * @parameter expression="${jsonschema2pojo.enableAdditionalPropertiesToBeSerialized}"
+     *            default-value="false"
+     * @since 0.4.38
+     */
+    private boolean enableAdditionalPropertiesToBeSerialized = false;
+
+    /**
      * Whether to include getters/setters or to omit these accessor methods and
      * create public fields instead.
      *
@@ -1000,6 +1010,10 @@ public class Jsonschema2PojoMojo extends AbstractMojo implements GenerationConfi
         return includeAdditionalProperties;
     }
 
+    @Override
+    public boolean isEnableAdditionalPropertiesToBeSerialized() {
+        return enableAdditionalPropertiesToBeSerialized;
+    }
     @Override
     public boolean isIncludeAccessors() {
         return includeAccessors;

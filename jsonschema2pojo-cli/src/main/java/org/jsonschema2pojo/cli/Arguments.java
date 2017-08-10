@@ -161,6 +161,9 @@ public class Arguments implements GenerationConfig {
     @Parameter(names = { "-D", "--enable-additional-properties" }, description = "Enable additional properties support on generated types, regardless of the input schema(s)")
     private boolean isIncludeAdditionalProperties = false;
 
+    @Parameter(names = { "-DS", "--enable-additional-properties-to-be-serialized" }, description = "Whether to add JsonIgnore annotation to additional properties")
+    private boolean isEnableAdditionalPropertiesToBeSerialized = false;
+
     @Parameter(names = { "-da", "--disable-accessors" }, description = "Whether to omit getter/setter methods and create public fields instead.")
     private boolean disableAccessors = false;
 
@@ -417,6 +420,11 @@ public class Arguments implements GenerationConfig {
     @Override
     public boolean isIncludeAdditionalProperties() {
         return isIncludeAdditionalProperties;
+    }
+
+    @Override
+    public boolean isEnableAdditionalPropertiesToBeSerialized() {
+        return isEnableAdditionalPropertiesToBeSerialized;
     }
 
     @Override

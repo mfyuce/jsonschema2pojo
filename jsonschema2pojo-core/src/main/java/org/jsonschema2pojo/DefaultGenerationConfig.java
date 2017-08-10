@@ -301,6 +301,13 @@ public class DefaultGenerationConfig implements GenerationConfig {
     /**
      * @return <code>true</code>
      */
+    @Override
+    public boolean isEnableAdditionalPropertiesToBeSerialized() {
+        return false;
+    }
+    /**
+     * @return <code>true</code>
+     */
     public boolean isIncludeAccessors() {
         return true;
     }

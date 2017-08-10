@@ -371,6 +371,14 @@ public interface GenerationConfig {
     boolean isIncludeAdditionalProperties();
 
     /**
+     * Gets the 'enableAdditionalPropertiesToBeSerialized' configuration option.
+     *
+     * @return Whether to allow 'additional properties' to have.
+     *         JsonIgnore annotation. This may be of use on some designs.
+     */
+    boolean isEnableAdditionalPropertiesToBeSerialized();
+
+    /**
      * Gets the 'includeAccessors' configuration option.
      *
      * @return Whether to include getters/setters or to omit these accessor
